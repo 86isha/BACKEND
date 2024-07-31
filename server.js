@@ -43,15 +43,19 @@ app.use(express.static(path.resolve(__dirname, "./Public")));
 
 app.get("/userdata", (req, res) => {
     res.send(userdata);
-    });
+    });             
 
 app.get("/", (req, res) => {
     res.sendFile(path.resolve(__dirname,"./Public", "index.html"));
     });
 
-    app.get("/contact", (req, res) => {
-      res.sendFile(path.resolve(__dirname,"./Public", "contact.html"));
-      });
+app.get("/contact", (req, res) => {
+    res.sendFile(path.resolve(__dirname,"./Public", "contact.html"));
+    });
+
+    app.get("/stopwatch", (req, res) => {
+        res.sendFile(path.resolve(__dirname,"./Public", "stopwatch.html"));
+        });
 
 
 app.listen(PORT, () =>{
